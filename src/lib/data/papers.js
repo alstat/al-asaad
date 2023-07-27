@@ -51,7 +51,7 @@ export const papers = [
         pages: "4228",
         doi: "10.21105/joss.04228",
         href: "https://joss.theoj.org/papers/10.21105/joss.04228",
-        application: "🌽"
+        application: "🌾"
     },
     {
         type: "conference",

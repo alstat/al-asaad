@@ -30,7 +30,7 @@ export const workExperiences = [
     },
     {
         company: "Aboitiz Data Innovation",
-        position: ["Assitant Manager", "Manager, Senior Data Scientist"],
+        position: ["Assistant Manager", "Manager, Senior Data Scientist"],
         dateRange: "Apr 2021 - Feb 2023",
         address: "Taguig City, Philippines",
         logoAlt: "ADI Logo",
@@ -38,7 +38,7 @@ export const workExperiences = [
     },
     {
         company: "UnionBank of the Philippines",
-        position: ["Assitant Manager", "Manager, Senior Data Scientist"],
+        position: ["Assistant Manager", "Manager, Senior Data Scientist"],
         dateRange: "Apr 2020 - Feb 2023",
         address: "Pasig City, Philippines",
         logoAlt: "UBP Logo",
@@ -46,7 +46,7 @@ export const workExperiences = [
     },
     {
         company: "Aboitiz Equity Ventures",
-        position: ["Assitant Manager, Senior Data Scientist"],
+        position: ["Assistant Manager, Senior Data Scientist"],
         dateRange: "Apr 2019 - Feb 2020",
         address: "Taguig City, Philippines",
         logoAlt: "AEV Logo",
@@ -61,12 +61,12 @@ export const workExperiences = [
         href: "https://neuralmechanics.net/"
     },
     {
-        company: "NeuralMechanics, Inc.",
+        company: "DiGenomix, PTE. LTD.",
         position: ["Data Scientist"],
-        dateRange: "Jan 2018 - Jul 2019",
+        dateRange: "Jul 2017 - Dec 2017",
         address: "Pasig City, Philippines",
         logoAlt: "NM Logo",
-        href: "https://neuralmechanics.net/"
+        href: "https://www.companies.sg/business/201724521Z/DIGENOMIX-PTE-LTD-"
     },
     {
         company: "Philippine Genome Center",

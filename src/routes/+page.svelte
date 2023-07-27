@@ -1,7 +1,7 @@
 <script>
-	import Projects from "$lib/components/projects.svelte";
-	import WelcomeMessage from "$lib/components/welcome-message.svelte";
-	import Contact from "$lib/components/contact.svelte";
+	import Projects from "./Projects.svelte";
+	import WelcomeMessage from "./WelcomeMessage.svelte";
+	import Contact from "./Contact.svelte";
 	import welcome from '$lib/images/alasaad.jpg';
     import alasaadLogo from '$lib/images/alasaad-logo.png';
 </script>
