@@ -77,6 +77,7 @@
 		</tbody>
 	</table>
 	<br>
+	<br>
 	<div class="title-emphasis">Education</div><br>
 	<table>
 		<tbody>
@@ -90,9 +91,7 @@
 					<td>
 						{ school["schoolYear"] }: <br>
 						<b><span class="emphasis"> { school["degree"] } </span></b><br>
-						<a href={ school["href"] }>
-							{ school["school"] }
-						</a>, 
+						<a href={ school["href"] }>{ school["school"] }</a>,
 						{ school["university"] }<br>
 						{ school["address"] }<br><br>
 					</td>
@@ -124,26 +123,26 @@
 	}
 	.vertical-line {
 		position:absolute;
-		margin-top: -105px;
+		margin-top: -100px;
 		margin-left: 66px;
 		border-left: 1px solid #9400f7;
-  		height: 145px;
+  		height: 135px;
 		z-index: -1;
 	}
 	.dots {
-		height: 5px;
-		width: 5px;
+		height: 4px;
+		width: 4px;
 		background-color: #6e01b7;
 		border-radius: 50%;
 	}
 	.top {
 		position:absolute;
 		margin-top: -108px;
-		margin-left: 64px;
+		margin-left: 64.5px;
 	}
 	.below {
 		position:absolute;
 		margin-top: 39px;
-		margin-left: 64px;
+		margin-left: 64.5px;
 	}
 </style>
