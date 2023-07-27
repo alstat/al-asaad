@@ -80,7 +80,7 @@ export const papers = [
         title: "QuranTree.jl: A Julia Package for Quranic Arabic Corpus",
         proceeding: "Proceedings of the Sixth Arabic Natural Language Processing Workshop",
         address: "Kyiv, Ukraine (Virtual)",
-        href: "https://psa.gov.ph/sites/default/files/kmcd/ONTHER~1.PDF",
+        href: "https://aclanthology.org/2021.wanlp-1.22/",
         application: "☪️",
         pages: "208-212",
         publisher: "Association for Computational Linguistic",
