@@ -2,8 +2,8 @@
 	import Projects from "$lib/components/projects.svelte";
 	import WelcomeMessage from "$lib/components/welcome-message.svelte";
 	import Contact from "$lib/components/contact.svelte";
-	import welcome from '../lib/images/alasaad.jpg';
-    import alasaadLogo from '../lib/images/alasaad-logo.png';
+	import welcome from '$lib/images/alasaad.jpg';
+    import alasaadLogo from '$lib/images/alasaad-logo.png';
 </script>
 
 <svelte:head>

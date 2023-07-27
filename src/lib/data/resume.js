@@ -45,6 +45,22 @@ export const workExperiences = [
         href: "https://www.unionbankph.com/"
     },
     {
+        company: "Aboitiz Equity Ventures",
+        position: ["Assitant Manager, Senior Data Scientist"],
+        dateRange: "Apr 2019 - Feb 2020",
+        address: "Taguig City, Philippines",
+        logoAlt: "AEV Logo",
+        href: "https://aboitiz.com/"
+    },
+    {
+        company: "NeuralMechanics, Inc.",
+        position: ["Data Scientist"],
+        dateRange: "Jan 2018 - Jul 2019",
+        address: "Pasig City, Philippines",
+        logoAlt: "NM Logo",
+        href: "https://neuralmechanics.net/"
+    },
+    {
         company: "NeuralMechanics, Inc.",
         position: ["Data Scientist"],
         dateRange: "Jan 2018 - Jul 2019",
