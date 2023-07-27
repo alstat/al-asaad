@@ -14,31 +14,64 @@
 	<table>
 		<tbody>
 			{#each workExperiences as work, i}
-				<tr>
-					<td class="logo-td">
-						<a href="{ work["href"] }">
-							<img src={ workLogos[i] } alt="{ work["logoAlt"] }" class="logo"/>
-						</a>
-					</td>
-					<td>{ work["dateRange"] }: 
-						{#if work["position"].length > 1 }
-							(promoted from { work["position"][0] })
-						{/if}
-						<br>
-						{#if work["position"].length > 1 }
-							<b>{ work["position"].slice(-1) }</b>
-						{:else}
-							<b>{ work["position"] }</b>
-						{/if}
-						<br/>
-						<span class="emphasis"> 
-							<b>
-								<a href="{ work["href"] }">{ work["company"] }</a>
-							</b>
-						</span>
-						<br>{ work["address"] }<br><br>
-					</td>
-				</tr>
+				{#if work["position"].length > 1 }
+					{#each work["position"] as job, j}
+						<!-- {console.log(j)} -->
+						<tr>
+							{#if j < 1}
+								<td class="logo-td">
+									<a href="{ work["href"] }">
+										<img src={ workLogos[i] } alt="{ work["logoAlt"] }" class="logo"/>
+									</a>
+								</td>
+							{:else}
+								<td>
+									<div class="dots top"></div>
+									<div class="vertical-line"></div>
+									<div class="dots below"></div>
+								</td>
+							{/if}
+							<td>{ work["dateRange"][j] }: 	
+								<br>
+								<b>{ job }</b>
+								<br>
+								{#if j < 1}
+									<span class="emphasis"> 
+										<b>
+											<a href="{ work["href"] }">{ work["company"] }</a>
+										</b>
+									</span>
+									<br>{ work["address"] }<br><br>
+								{:else}
+									<br>
+								{/if}
+							</td>
+						</tr>
+					{/each}
+				{:else}
+					<tr>
+						<td class="logo-td">
+							<a href="{ work["href"] }">
+								<img src={ workLogos[i] } alt="{ work["logoAlt"] }" class="logo"/>
+							</a>
+						</td>
+						<td>{ work["dateRange"] }: 	
+							<br>
+							{#if work["position"].length > 1 }
+								<b>{ work["position"].slice(-1) }</b>
+							{:else}
+								<b>{ work["position"] }</b>
+							{/if}
+							<br/>
+							<span class="emphasis"> 
+								<b>
+									<a href="{ work["href"] }">{ work["company"] }</a>
+								</b>
+							</span>
+							<br>{ work["address"] }<br><br>
+						</td>
+					</tr>
+				{/if}
 				<tr></tr>
 			{/each}
 		</tbody>
@@ -88,5 +121,29 @@
 	}
 	.emphasis {
 		color: var(--color-theme-1);
+	}
+	.vertical-line {
+		position:absolute;
+		margin-top: -105px;
+		margin-left: 66px;
+		border-left: 1px solid #9400f7;
+  		height: 145px;
+		z-index: -1;
+	}
+	.dots {
+		height: 5px;
+		width: 5px;
+		background-color: #6e01b7;
+		border-radius: 50%;
+	}
+	.top {
+		position:absolute;
+		margin-top: -108px;
+		margin-left: 64px;
+	}
+	.below {
+		position:absolute;
+		margin-top: 39px;
+		margin-left: 64px;
 	}
 </style>

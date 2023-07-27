@@ -30,16 +30,16 @@ export const workExperiences = [
     },
     {
         company: "Aboitiz Data Innovation",
-        position: ["Assistant Manager", "Manager, Senior Data Scientist"],
-        dateRange: "Apr 2021 - Feb 2023",
+        position: ["Manager, Senior Data Scientist", "Assistant Manager, Senior Data Scientist"],
+        dateRange: ["Jul 2022 - Mar 2023", "Apr 2021 - Jul 2022"],
         address: "Taguig City, Philippines",
         logoAlt: "ADI Logo",
         href: "https://aboitizdatainnovation.com/"
     },
     {
         company: "UnionBank of the Philippines",
-        position: ["Assistant Manager", "Manager, Senior Data Scientist"],
-        dateRange: "Apr 2020 - Feb 2023",
+        position: ["Manager, Senior Data Scientist", "Assistant Manager, Senior Data Scientist"],
+        dateRange: ["Jul 2022 - Mar 2023", "Apr 2020 - Jul 2022"],
         address: "Pasig City, Philippines",
         logoAlt: "UBP Logo",
         href: "https://www.unionbankph.com/"
