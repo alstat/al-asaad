@@ -37,23 +37,12 @@
 <style>
 	.projects::before {
 		content: '';
-		position: absolute;
-		top: 250%;
+		position: fixed;
+		top: 85%;
 		left: 54%;
 		width: 30%;
 		height: 30%;
 		background: linear-gradient(#f00, #f0f);
-		clip-path: circle(20% at 50% 50%);
-		z-index: -1;
-	}
-	.projects::after {
-		content: '';
-		position: absolute;
-		top: 150%;
-		left: 1%;
-		width: 40%;
-		height: 40%;
-		background: linear-gradient(#2196f3, #e91e63);
 		clip-path: circle(20% at 50% 50%);
 		z-index: -1;
 	}

@@ -17,7 +17,6 @@
 			{#each workExperiences as work, i}
 				{#if work["position"].length > 1 }
 					{#each work["position"] as job, j}
-						<!-- {console.log(j)} -->
 						<tr>
 							{#if j < 1}
 								<td class="logo-td">

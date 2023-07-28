@@ -91,6 +91,7 @@
         border: solid 2px transparent;
         background-clip: padding-box;
         -webkit-background-clip: padding-box;
+        -moz-background-clip: padding-box;
         box-shadow: 0px 10px 10px rgba(46, 54, 68, 0.03);
     }
     .container .card .content {

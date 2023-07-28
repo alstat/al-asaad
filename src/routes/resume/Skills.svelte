@@ -1,7 +1,6 @@
 <script>
 	import { skillsData } from "$lib/data/skills.js";
 	let skills = Object.keys(skillsData);
-	console.log(skills);
 </script>
 
 {#each skills as skill, i}
