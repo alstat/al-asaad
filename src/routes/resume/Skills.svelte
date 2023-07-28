@@ -62,7 +62,7 @@
 	.skill-container {
 		display: inline-block;
 		text-align: center;
-        padding: 30px;
+        padding: 20px;
 	}
 	.gauge {
 		display: block;
