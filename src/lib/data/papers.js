@@ -1,7 +1,7 @@
 export const papers = [
     {
         type: "thesis",
-        author: ["Asaad, A.-A.B."],
+        author: ["Asaad, A.A.B."],
         year: 2017,
         title: "Bayesian Autoregressive Distributed Lag via Stochastic Gradient Hamiltonian Monte Carlo",
         publisher: "Master's Thesis",
@@ -10,7 +10,7 @@ export const papers = [
     },
     {
         type: "thesis",
-        author: ["Asaad, A.-A.B."],
+        author: ["Asaad, A.A.B."],
         year: 2013,
         title: "Seasonal space-time autoregressive integrated moving average modeling",
         publisher: "Undergraduate Thesis",
@@ -19,7 +19,7 @@ export const papers = [
     },
     {
         type: "journal",
-        author: ["Asaad, A.-A.B."],
+        author: ["Asaad, A.A.B."],
         year: 2023,
         title: "Multi-step forecasting of the Philippine storm frequencies using Poisson neural network",
         journal: "Theor Appl Climatol",
@@ -31,7 +31,7 @@ export const papers = [
     },
     {
         type: "journal",
-        author: ["Asaad, A.-A.B."],
+        author: ["Asaad, A.A.B."],
         year: 2022,
         title: "Circular characteristics of the philippine storm tracks",
         journal: "Spatial Information Research",
@@ -43,7 +43,7 @@ export const papers = [
     },
     {
         type: "journal",
-        author: ["Asaad, A.-A.B.", "Salvacion, A.R.", "Yen, B.T."],
+        author: ["Asaad, A.A.B.", "Salvacion, A.R.", "Yen, B.T."],
         year: 2022,
         title: "ALUES: R package for Agricultural Land Use Evaluation System",
         journal: "Journal of Open Source Software",
@@ -55,7 +55,7 @@ export const papers = [
     },
     {
         type: "conference",
-        author: ["Asaad, A.-A.B."],
+        author: ["Asaad, A.A.B."],
         year: 2022,
         title: "Bayesian log-linear Poisson Autoregressive Model",
         proceeding: "15th National Convention on Statistics",
@@ -65,7 +65,7 @@ export const papers = [
     },
     {
         type: "conference",
-        author: ["Asaad, A.-A.B.", "Morales, M.L.R"],
+        author: ["Asaad, A.A.B.", "Morales, M.L.R"],
         year: 2022,
         title: "On the rolling forecast of the LightGBM for multi-step forecasting",
         proceeding: "15th National Convention on Statistics",
@@ -75,7 +75,7 @@ export const papers = [
     },
     {
         type: "conference",
-        author: ["Asaad, A.-A.B."],
+        author: ["Asaad, A.A.B."],
         year: 2021,
         title: "QuranTree.jl: A Julia Package for Quranic Arabic Corpus",
         proceeding: "Proceedings of the Sixth Arabic Natural Language Processing Workshop",
@@ -87,7 +87,7 @@ export const papers = [
     },
     {
         type: "conference",
-        author: ["Asaad, A.-A.B.", "Magadia, J.C."],
+        author: ["Asaad, A.A.B.", "Magadia, J.C."],
         year: 2019,
         title: "Stochastic Gradient Hamiltonian Monte Carlo on Bayesian Time Series Modeling",
         proceeding: "14th National Convention on Statistics",
@@ -97,7 +97,7 @@ export const papers = [
     },
     {
         type: "journal",
-        author: ["Asaad, C.O.", "Caraos, G.L.", "Robles, G.J.M.", "Asa, A.D.D.C.", "Cobar, M.L.C.", "Asaad, A.-A.B."],
+        author: ["Asaad, C.O.", "Caraos, G.L.", "Robles, G.J.M.", "Asa, A.D.D.C.", "Cobar, M.L.C.", "Asaad, A.A.B."],
         year: 2016,
         title: "Enhancing Cytogenetic Biological Dosimetry Capabilities of the Philippines for Nuclear Incident Preparedness",
         journal: "Genome Integr",
@@ -109,7 +109,7 @@ export const papers = [
     },
     {
         type: "conference",
-        author: ["Mapa, S.C.D.", "Del Prado, D.G.L.", "Castillo, P.G.S.", "Poliquit, I.A.R.", "Asaad, A.-A.B."],
+        author: ["Mapa, S.C.D.", "Del Prado, D.G.L.", "Castillo, P.G.S.", "Poliquit, I.A.R.", "Asaad, A.A.B."],
         year: 2016,
         title: "Enhancement of the Composite Leading Economic Indicator System of the Philippines",
         proceeding: "13th National Convention on Statistics",
