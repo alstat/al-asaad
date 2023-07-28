@@ -3,7 +3,7 @@
 	import "$lib/styles.css";
 </script>
 
-<div class="app particle-network-animation">
+<div class="app">
 	<Header />
 	<main>
 		<slot />

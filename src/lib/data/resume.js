@@ -117,7 +117,7 @@ export const schools = [
     {
         degree: "Secondary Diploma",
         schoolYear: "Jun 2005 - Mar 2009",
-        school: "Laboratory Elementary School",
+        school: "Preparatory High School",
         university: "Mindanao State University - Tawi-Tawi College of Technology and Oceanography",
         address: "Tawi-Tawi, Philippines",
         logoAlt: "TCTO Logo",
@@ -126,7 +126,7 @@ export const schools = [
     {
         degree: "Elementary Diploma",
         schoolYear: "Jun 1999 - Mar 2005",
-        school: "Preparatory High School",
+        school: "Laboratory Elementary School",
         university: "Mindanao State University - Tawi-Tawi College of Technology and Oceanography",
         address: "Tawi-Tawi, Philippines",
         logoAlt: "TCTO Logo",
