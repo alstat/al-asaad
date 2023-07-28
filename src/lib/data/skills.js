@@ -1,10 +1,22 @@
 const progLang = [
     {
-        skill: "Julia/R/Python",
+        skill: "Julia",
         percent: 100
     },
     {
-        skill: "JS/TS",
+        skill: "R",
+        percent: 100
+    },
+    {
+        skill: "Python",
+        percent: 100
+    },
+    {
+        skill: "JS",
+        percent: 90
+    },
+    {
+        skill: "TS",
         percent: 90
     },
     {
@@ -42,11 +54,11 @@ const natLang = [
 
 export const skillsData = {
     progLang: {
-        label: "Programming Language",
+        label: "Programming Languages",
         data: progLang
     },
     natLang:  {
-        label: "Natural Language",
+        label: "Natural Languages",
         data: natLang
     }
 }
