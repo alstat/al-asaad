@@ -59,7 +59,7 @@
 								{#if paper["author"].length === 2}
 									&&nbsp;
 								{:else}
-									,&&nbsp;
+									, &&nbsp;
 								{/if}
 							{/if}
 						{/each}
