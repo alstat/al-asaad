@@ -1,6 +1,7 @@
 <script>
 	import { workExperiences, workLogos } from "$lib/data/resume.js";
 	import { schools, schoolLogos } from "$lib/data/resume.js";
+	import Skills from "./Skills.svelte";
 </script>
 
 <svelte:head>
@@ -77,6 +78,9 @@
 		</tbody>
 	</table>
 	<br>
+	<br>
+	<div class="title-emphasis">Skills</div><br>
+	<Skills/>
 	<br>
 	<div class="title-emphasis">Education</div><br>
 	<table>
