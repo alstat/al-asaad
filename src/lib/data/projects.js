@@ -24,7 +24,7 @@ export const projects = [
         desc: "Julia package for interfacing with Quranic Arabic Corpus"
     },
     {
-        href: "https://github.com/alstat/QuranTree.jl/tree/master",
+        href: "https://github.com/alstat/Yunir.jl/tree/master",
         logo: yunir,
         label: "Yunir.jl",
         desc: "Julia package for Arabic Natural Language Processing"
