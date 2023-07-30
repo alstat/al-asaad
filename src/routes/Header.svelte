@@ -5,8 +5,7 @@
 </script>
 
 <header>
-	<div class="corner">
-	</div>
+	<div class="corner"></div>
 
 	<nav>
 		<ul>
@@ -27,9 +26,7 @@
 		</ul>
 	</nav>
 
-	<div class="corner">
-	
-	</div>
+	<div class="corner"></div>
 </header>
 
 <style>
