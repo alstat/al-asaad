@@ -24,9 +24,6 @@
 			<li aria-current={$page.url.pathname === "/ai-projects" ? "page" : undefined}>
 				<a href="/ai-projects">A.I.</a>
 			</li>
-			<li aria-current={$page.url.pathname === "/blog" ? "page" : undefined}>
-				<a href="/blog">Blog</a>
-			</li>
 		</ul>
 	</nav>
 
