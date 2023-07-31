@@ -1,4 +1,67 @@
-export const papers = [
+export type KeysOfUnion<T> = T extends T ? keyof T: never;
+
+export interface Thesis {
+    type: string,
+    author: string[],
+    year: number,
+    title: string,
+    publisher: string,
+    href: string,
+    application: string
+}
+// export const thesisKeys: (keyof Thesis)[] = [
+//     "type", "author", "year", "title", 
+//     "publisher", "href", "application"
+// ]
+
+export interface Conference {
+    type: string,
+    author: string[],
+    year: number,
+    title: string,
+    proceeding: string,
+    address: string,
+    href: string,
+    application: string,
+    pages?: string,
+    publisher?: string
+}
+// export const conferenceKeys: (keyof Conference)[] = [
+//     "type", "author", "year", "title", 
+//     "proceeding", "address", "href", 
+//     "application", "pages", "publisher"
+// ]
+
+export interface Journal {
+    type: string,
+    author: string[],
+    year: number,
+    title: string,
+    journal: string,
+    issue: string,
+    pages: string,
+    doi: string,
+    href: string,
+    application: string
+}
+
+// export const journalKeys: (keyof Journal)[] = [
+//     "type", "author", "year", "title", 
+//     "journal", "issue", "pages",
+//     "doi", "href", "application"
+// ]
+
+export type Paper = Thesis|Conference|Journal;
+export type PaperKeys = KeysOfUnion<Paper>;
+// export const paperKeys: (KeysOfUnion<Paper>)[] = [
+//     "type", "author", "year", "title",
+//     "journal", "issue", "pages",
+//     "doi", "href", "application",
+//     "publisher", "proceeding", "address"
+// ]; 
+
+export let papers: Paper[];
+papers = [
     {
         type: "thesis",
         author: ["Asaad, A.A.B."],
@@ -118,3 +181,5 @@ export const papers = [
         application: "📈"
     },
 ]
+
+console.log(papers[0]["publisher" as keyof Paper])

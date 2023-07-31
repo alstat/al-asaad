@@ -1,4 +1,19 @@
-const progLang = [
+interface Skill {
+    skill: string,
+    percent: number
+}
+
+export interface SkillsData {
+    progLang: LangData,
+    natLang: LangData
+}
+
+interface LangData {
+    label: string,
+    data: Skill[]
+}
+
+export const progLangs: Skill[] = [
     {
         skill: "Julia",
         percent: 100
@@ -25,7 +40,7 @@ const progLang = [
     },
 ]
 
-const natLang = [
+const natLangs: Skill[] = [
     {
         skill: "Tagalog",
         percent: 100
@@ -52,13 +67,13 @@ const natLang = [
     },
 ]
 
-export const skillsData = {
+export const skillsData: SkillsData = {
     progLang: {
         label: "Programming Languages",
-        data: progLang
+        data: progLangs
     },
     natLang:  {
         label: "Natural Languages",
-        data: natLang
+        data: natLangs
     }
 }

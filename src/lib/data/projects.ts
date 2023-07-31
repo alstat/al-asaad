@@ -4,7 +4,15 @@ import quranTree from "$lib/images/qurantree-logo.png";
 import kitab from "$lib/images/kitab-logo.svg";
 import yunir from "$lib/images/yunir-logo.png";
 
-export const projects = [
+interface Project {
+    href: string,
+    logo: string,
+    label: string, 
+    desc: string
+}
+
+export let projects: Project[];
+projects = [
     {
         href: "https://github.com/alstat/ALUES/tree/master",
         logo: alues,

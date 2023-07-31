@@ -1,5 +1,5 @@
 <script>
-    import { projects } from "$lib/data/projects.js"
+    import { projects } from "$lib/data/projects.ts"
 </script>
 
 <div id="icon-sections">
@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="content">
                     <div class="img">
-                        <a href="{ project["href"] }"><img src={ project["logo"] } alt="{ project["name"] }" /></a>
+                        <a href="{ project["href"] }"><img src={ project["logo"] } alt="{ project["label"] }" /></a>
                     </div>
                     <div class="cardContent">
                         <h3><b>{ project["label"] }</b><br><br></h3>

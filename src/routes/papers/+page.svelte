@@ -1,16 +1,18 @@
-<script>
-	import { papers } from "$lib/data/papers.js";
-
-	let theses;
-	let nonTheses;
-	theses = papers.filter((object) => {
+<script lang="ts">
+	import { papers } from "$lib/data/papers.ts";
+	import type { Paper, PaperKeys } from "$lib/data/papers.ts";
+	
+	let theses: Array<Paper>;
+	let nonTheses: Array<Paper>;
+	theses = papers.filter((object: Paper) => {
 		return object["type"] === "thesis";
 	});
-	nonTheses = papers.filter((object) => {
+	nonTheses = papers.filter((object: Paper) => {
 		return object["type"] !== "thesis";
 	});
-	let data = {};
-	let i;
+
+	let data: {[key: string]: Array<Paper>} = {};
+	let i: number;
 	for (i = 0; i < nonTheses.length; ++i) {
 		data[nonTheses[i]["year"]] = [];
 	}

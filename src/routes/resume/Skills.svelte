@@ -1,6 +1,6 @@
-<script>
-	import { skillsData } from "$lib/data/skills.js";
-	let skills = Object.keys(skillsData);
+<script lang="ts">
+	import { skillsData } from "$lib/data/skills.ts";
+	let skills = Object.keys(skillsData) as Array<keyof typeof skillsData>;
 </script>
 
 {#each skills as skill, i}
@@ -14,9 +14,9 @@
                     <div
                         class="gauge"
                         role="progressbar"
-                        aria-valuenow="65"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
+                        [aria-valuenow]="65"
+                        [aria-valuemin]="0"
+                        [aria-valuemax]="100"
                         style="--value:{ data["percent"] }"
                     />
                     <div class="skill">
@@ -32,9 +32,9 @@
                 <div
                     class="gauge"
                     role="progressbar"
-                    aria-valuenow="65"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
+                    aria-valuenow=65
+                    [aria-valuemin]=0
+                    [aria-valuemax]=100
                     style="--value:{ data["percent"] }"
                 />
                 <div class="skill">

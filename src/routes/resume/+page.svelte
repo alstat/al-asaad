@@ -1,6 +1,6 @@
-<script>
-	import { workExperiences, workLogos } from "$lib/data/resume.js";
-	import { schools, schoolLogos } from "$lib/data/resume.js";
+<script lang="ts">
+	import { workExperiences, workLogos } from "$lib/data/resume.ts";
+	import { schools, schoolLogos } from "$lib/data/resume.ts";
 	import Skills from "./Skills.svelte";
 </script>
 
