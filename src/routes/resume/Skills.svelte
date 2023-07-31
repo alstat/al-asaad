@@ -14,7 +14,7 @@
                     <div
                         class="gauge"
                         role="progressbar"
-                        aria-valuenow="65"
+						aria-valuenow={ data["percent"] }
                         aria-valuemin="0"
                         aria-valuemax="100"
                         style="--value:{ data["percent"] }"
@@ -32,7 +32,7 @@
                 <div
                     class="gauge"
                     role="progressbar"
-                    aria-valuenow="65"
+                    aria-valuenow={ data["percent"] }
                     aria-valuemin="0"
                     aria-valuemax="100"
                     style="--value:{ data["percent"] }"

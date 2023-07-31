@@ -17,11 +17,11 @@ const progLang = [
     },
     {
         skill: "TS",
-        percent: 90
+        percent: 70
     },
     {
         skill: "Svelte",
-        percent: 70
+        percent: 60
     },
 ]
 
