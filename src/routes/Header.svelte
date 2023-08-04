@@ -1,32 +1,32 @@
 <script>
-	import { base } from "$app/paths";
-	import { page } from "$app/stores";
-	import logo from "$lib/images/alasaad-logo.svg";
+	import { base } from '$app/paths';
+	import { page } from '$app/stores';
+	import logo from '$lib/images/alasaad-logo.svg';
 </script>
 
 <header>
-	<div class="corner"></div>
+	<div class="corner" />
 
 	<nav>
 		<ul>
-			<li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
+			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">
-					<img src={logo} alt="SvelteKit" class="nav-logo"/>
+					<img src={logo} alt="SvelteKit" class="nav-logo" />
 				</a>
 			</li>
-			<li aria-current={$page.url.pathname === "/papers" ? "page" : undefined}>
+			<li aria-current={$page.url.pathname === '/papers' ? 'page' : undefined}>
 				<a href="/papers">Papers</a>
 			</li>
-			<li aria-current={$page.url.pathname === "/resume" ? "page" : undefined}>
+			<li aria-current={$page.url.pathname === '/resume' ? 'page' : undefined}>
 				<a href="/resume">Résumé</a>
 			</li>
-			<li aria-current={$page.url.pathname === "/ai-projects" ? "page" : undefined}>
+			<!-- <li aria-current={$page.url.pathname === '/ai-projects' ? 'page' : undefined}>
 				<a href="/ai-projects">A.I.</a>
-			</li>
+			</li> -->
 		</ul>
 	</nav>
 
-	<div class="corner"></div>
+	<div class="corner" />
 </header>
 
 <style>
@@ -40,19 +40,19 @@
 		height: 3em;
 	}
 	.nav-logo {
-		display: inline; 
+		display: inline;
 		padding-right: 0px;
 		width: 32.64px;
 	}
 	nav {
 		--background: rgba(255, 255, 255, 0.05);
-        display: flex;
-        justify-content: center;
-        backdrop-filter: blur(40px);
+		display: flex;
+		justify-content: center;
+		backdrop-filter: blur(40px);
 		-webkit-backdrop-filter: blur(40px);
-        background-clip:content-box;
-		-webkit-background-clip:content-box;
-        --box-shadow: 0px 10px 10px rgba(46, 54, 68, 0.03);
+		background-clip: content-box;
+		-webkit-background-clip: content-box;
+		--box-shadow: 0px 10px 10px rgba(46, 54, 68, 0.03);
 		width: 100%;
 		position: fixed;
 		left: 50%;
@@ -79,9 +79,9 @@
 		height: 100%;
 	}
 
-	li[aria-current="page"]::before {
+	li[aria-current='page']::before {
 		--size: 6px;
-		content: "";
+		content: '';
 		width: 0;
 		height: 0;
 		position: absolute;

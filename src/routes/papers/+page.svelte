@@ -1,23 +1,23 @@
 <script lang="ts">
-	import { papers } from "$lib/data/papers.ts";
-	import type { Paper, PaperKeys } from "$lib/data/papers.ts";
-	
-	let theses: Array<Paper>;
-	let nonTheses: Array<Paper>;
+	import { papers } from '$lib/data/papers';
+	import type { Paper, Thesis } from '$lib/data/papers';
+
+	let theses: Thesis[];
+	let nonTheses: Paper[];
 	theses = papers.filter((object: Paper) => {
-		return object["type"] === "thesis";
-	});
+		return object['type'] === 'thesis';
+	}) as Thesis[];
 	nonTheses = papers.filter((object: Paper) => {
-		return object["type"] !== "thesis";
+		return object['type'] !== 'thesis';
 	});
 
-	let data: {[key: string]: Array<Paper>} = {};
+	let data: { [key: string]: Paper[] } = {};
 	let i: number;
 	for (i = 0; i < nonTheses.length; ++i) {
-		data[nonTheses[i]["year"]] = [];
+		data[nonTheses[i]['year']] = [];
 	}
 	for (i = 0; i < nonTheses.length; ++i) {
-		data[nonTheses[i]["year"]].push(nonTheses[i]);
+		data[nonTheses[i]['year']].push(nonTheses[i]);
 	}
 	let years = Object.keys(data).reverse();
 </script>
@@ -34,11 +34,11 @@
 	<ul>
 		{#each theses as thesis, i}
 			<li>
-				<u>{thesis["author"]}</u>
-				({thesis["year"]}).
-				{thesis["title"]}.
-				<span class="emphasize">{thesis["publisher"]}</span>. (<a href={thesis["href"]}>read</a>)
-				{thesis["application"]}
+				<u>{thesis['author']}</u>
+				({thesis['year']}).
+				{thesis['title']}.
+				<span class="emphasize">{thesis['publisher']}</span>. (<a href={thesis['href']}>read</a>)
+				{thesis['application']}
 			</li>
 			<br />
 		{/each}
@@ -48,17 +48,17 @@
 		<ul>
 			{#each data[year] as paper, i}
 				<li>
-					{#if paper["author"].length > 1}
-						{#each paper["author"] as author, k}
-							{#if author.includes("A.A.B.")}
+					{#if paper['author'].length > 1}
+						{#each paper['author'] as author, k}
+							{#if author.includes('A.A.B.')}
 								<u>{author}</u>
 							{:else}
 								{author}
 							{/if}
-							{#if k < paper["author"].length - 2}
+							{#if k < paper['author'].length - 2}
 								,&nbsp;
-							{:else if k === paper["author"].length - 2}
-								{#if paper["author"].length === 2}
+							{:else if k === paper['author'].length - 2}
+								{#if paper['author'].length === 2}
 									&&nbsp;
 								{:else}
 									, &&nbsp;
@@ -66,32 +66,32 @@
 							{/if}
 						{/each}
 					{:else}
-						<u>{paper["author"]}</u>
+						<u>{paper['author']}</u>
 					{/if}
-					({paper["year"]}).
-					{paper["title"]}.
+					({paper['year']}).
+					{paper['title']}.
 					<span class="emphasize">
-						{#if paper["type"] === "journal"}
-							<i>{paper["journal"]}</i>
-						{:else}
-							In <i>{paper["proceeding"]}</i>,
+						{#if paper['type'] === 'journal' && 'journal' in paper}
+							<i>{paper['journal']}</i>
+						{:else if 'proceeding' in paper}
+							In <i>{paper['proceeding']}</i>,
 						{/if}
 					</span>
-					{#if paper["type"] === "journal"}
-						<b>{paper["issue"]}</b>,
-						{paper["pages"]}, doi: {paper["doi"]}
+					{#if paper['type'] === 'journal' && 'issue' in paper}
+						<b>{paper['issue']}</b>,
+						{paper['pages']}, doi: {paper['doi']}
 					{/if}
-					{#if paper["type"] === "conference"}
-						{#if paper["pages"] !== undefined}
-							{paper["pages"]},&nbsp;
+					{#if paper['type'] === 'conference' && 'pages' in paper && 'address' in paper && 'publisher' in paper}
+						{#if paper['pages'] !== undefined}
+							{paper['pages']},&nbsp;
 						{/if}
-						{paper["address"]}.
-						{#if paper["publisher"] !== undefined}
-							{paper["publisher"]}
+						{paper['address']}.
+						{#if paper['publisher'] !== undefined}
+							{paper['publisher']}
 						{/if}
 					{/if}
-					(<a href={paper["href"]}>read</a>)
-					{paper["application"]}<br /><br />
+					(<a href={paper['href']}>read</a>)
+					{paper['application']}<br /><br />
 				</li>
 			{/each}
 		</ul>
@@ -106,7 +106,6 @@
 		line-height: 170%;
 		list-style-type: none;
 	}
-
 	.emphasize {
 		color: #ffae00;
 	}
