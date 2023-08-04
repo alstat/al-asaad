@@ -1,45 +1,46 @@
-<script>
-	import { skillsData } from "$lib/data/skills.js";
-	let skills = Object.keys(skillsData);
+<script lang="ts">
+	import { skillsData } from '$lib/data/skills';
+	import type { SkillsData } from '$lib/data/skills';
+	let skills = Object.keys(skillsData) as Array<keyof SkillsData>;
 </script>
 
 {#each skills as skill, i}
 	<div class="skills-header">
-		{ skillsData[skill]["label"] }
+		{skillsData[skill]['label']}
 	</div>
 	<div class="container">
-		{#each skillsData[skill]["data"] as data, j}
-            {#if j < 3}
-                <div class="skill-container">
-                    <div
-                        class="gauge"
-                        role="progressbar"
-						aria-valuenow={ data["percent"] }
-                        style="--value:{ data["percent"] }"
-                    />
-                    <div class="skill">
-                        { data["skill"] }
-                    </div>
-                </div>
-            {/if}
+		{#each skillsData[skill]['data'] as data, j}
+			{#if j < 3}
+				<div class="skill-container">
+					<div
+						class="gauge"
+						role="progressbar"
+						aria-valuenow={data['percent']}
+						style="--value:{data['percent']}"
+					/>
+					<div class="skill">
+						{data['skill']}
+					</div>
+				</div>
+			{/if}
 		{/each}
 	</div>
-    <div class="container">
-		{#each skillsData[skill]["data"].slice(3,) as data, j}
-            <div class="skill-container">
-                <div
-                    class="gauge"
-                    role="progressbar"
-                    aria-valuenow={ data["percent"] }
-                    style="--value:{ data["percent"] }"
-                />
-                <div class="skill">
-                    { data["skill"] }
-                </div>
-            </div>
+	<div class="container">
+		{#each skillsData[skill]['data'].slice(3) as data, j}
+			<div class="skill-container">
+				<div
+					class="gauge"
+					role="progressbar"
+					aria-valuenow={data['percent']}
+					style="--value:{data['percent']}"
+				/>
+				<div class="skill">
+					{data['skill']}
+				</div>
+			</div>
 		{/each}
 	</div>
-    <br><br>
+	<br /><br />
 {/each}
 
 <style>
@@ -49,15 +50,15 @@
 		margin-bottom: 20px;
 		color: var(--color-theme-0);
 	}
-    .container {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-    }
+	.container {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	}
 	.skill-container {
 		display: inline-block;
 		text-align: center;
-        padding: 20px;
+		padding: 20px;
 	}
 	.gauge {
 		display: block;
@@ -76,12 +77,12 @@
 	}
 
 	@property --pgPercentage {
-		syntax: "<number>";
+		syntax: '<number>';
 		inherits: false;
 		initial-value: 0;
 	}
 
-	div[role="progressbar"] {
+	div[role='progressbar'] {
 		--size: 5rem;
 		--fg: var(--color-theme-1);
 		--bg: var(--color-bg-0);
@@ -104,8 +105,8 @@
 		color: var(--fg);
 	}
 
-	div[role="progressbar"]::before {
+	div[role='progressbar']::before {
 		counter-reset: percentage var(--value);
-		content: counter(percentage) "%";
+		content: counter(percentage) '%';
 	}
 </style>

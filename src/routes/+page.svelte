@@ -1,14 +1,15 @@
-<script>
+<script lang="ts">
 	import Projects from './Projects.svelte';
 	import WelcomeMessage from './WelcomeMessage.svelte';
 	import Contact from './Contact.svelte';
 	import welcome from '$lib/images/alasaad.jpg';
 	import alasaadLogo from '$lib/images/alasaad-logo.png';
+	import * as config from '$lib/data/config';
 </script>
 
 <svelte:head>
-	<title>Al-Ahmadgaid B. Asaad</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>{config.title}</title>
+	<meta name="description" content={config.description} />
 	<link rel="icon" href={alasaadLogo} />
 	<link rel="masked-icon" href={alasaadLogo} />
 </svelte:head>
