@@ -20,9 +20,9 @@
 			<li aria-current={$page.url.pathname === '/resume' ? 'page' : undefined}>
 				<a href="/resume">Résumé</a>
 			</li>
-			<!-- <li aria-current={$page.url.pathname === '/ai-projects' ? 'page' : undefined}>
+			<li aria-current={$page.url.pathname === '/ai-projects' ? 'page' : undefined}>
 				<a href="/ai-projects">A.I.</a>
-			</li> -->
+			</li>
 		</ul>
 	</nav>
 
