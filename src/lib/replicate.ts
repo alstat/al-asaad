@@ -1,7 +1,4 @@
 import Replicate from "replicate";
-// import dotenv from "dotenv";
-// console.log(import.meta.env)
-// console.log(dotenv.config())
 
 const replicate = new Replicate({
     auth: import.meta.env.VITE_REPLICATE_API_TOKEN as string,
