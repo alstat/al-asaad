@@ -38,7 +38,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@vercel/analytics": "^1.0.1",
+		"dotenv": "^16.3.1",
 		"lucide-svelte": "^0.263.0",
-		"open-props": "^1.5.10"
+		"open-props": "^1.5.10",
+		"replicate": "^0.14.1"
 	}
 }
