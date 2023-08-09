@@ -1,39 +1,39 @@
-import Replicate from "replicate";
+// import Replicate from "replicate";
 
-const replicate = new Replicate({
-    auth: import.meta.env.VITE_REPLICATE_API_TOKEN as string,
-});
-console.log(replicate)
-type ReplicateModelName = `${string}/${string}:${string}`;
+// const replicate = new Replicate({
+//     auth: import.meta.env.VITE_REPLICATE_API_TOKEN as string,
+// });
 
-interface ReplicateInput {
-    input: ModelInput
-}
+// type ReplicateModelName = `${string}/${string}:${string}`;
 
-interface ModelInput {
-    motion_module: string,
-    prompt?: string
-}
+// interface ReplicateInput {
+//     input: ModelInput
+// }
 
-export async function generate(model: ReplicateModelName = "lucataco/animate-diff:1531004ee4c98894ab11f8a4ce6206099e732c1da15121987a8eef54828f0663", prompt?: string) {
-    let repData: ReplicateInput;
-    if (prompt === undefined) {
-        repData = {
-            input: {
-                motion_module: "mm_sd_v14"
-            }
-        }
-    } else {
-        repData = {
-            input: {
-                motion_module: "mm_sd_v14"
-            }
-        }
-    }
+// interface ModelInput {
+//     motion_module: string,
+//     prompt?: string
+// }
 
-    const output = await replicate.run(
-        model,
-        repData
-    );
-    return output;    
-}
+// export async function generate(model: ReplicateModelName = "lucataco/animate-diff:1531004ee4c98894ab11f8a4ce6206099e732c1da15121987a8eef54828f0663", prompt?: string) {
+//     let repData: ReplicateInput;
+//     if (prompt === undefined) {
+//         repData = {
+//             input: {
+//                 motion_module: "mm_sd_v14"
+//             }
+//         }
+//     } else {
+//         repData = {
+//             input: {
+//                 motion_module: "mm_sd_v14"
+//             }
+//         }
+//     }
+
+//     const output = await replicate.run(
+//         model,
+//         repData
+//     );
+//     return output;    
+// }
