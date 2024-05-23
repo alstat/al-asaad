@@ -125,7 +125,7 @@ papers = [
 		title: 'Bayesian log-linear Poisson Autoregressive Model',
 		proceeding: '15th National Convention on Statistics',
 		address: 'Crowne Plaza Manila Galleria, Quezon City, Philippines',
-		href: 'https://psa.gov.ph/sites/default/files/kmcd/Bayesian_Log_Linear_Poisson_Autoregressive_Model_0.pdf',
+		href: 'https://www.researchgate.net/publication/380818352_Bayesian_Log-Linear_Poisson_Autoregressive_Model',
 		application: '🌀'
 	},
 	{
@@ -135,7 +135,7 @@ papers = [
 		title: 'On the rolling forecast of the LightGBM for multi-step forecasting',
 		proceeding: '15th National Convention on Statistics',
 		address: 'Crowne Plaza Manila Galleria, Quezon City, Philippines',
-		href: 'https://psa.gov.ph/sites/default/files/kmcd/ONTHER~1.PDF',
+		href: 'https://www.researchgate.net/publication/380818619_On_the_rolling_forecasts_of_the_LightGBM_for_multi-step_forecasting',
 		application: '📈'
 	},
 	{
@@ -157,7 +157,7 @@ papers = [
 		title: 'Stochastic Gradient Hamiltonian Monte Carlo on Bayesian Time Series Modeling',
 		proceeding: '14th National Convention on Statistics',
 		address: 'Crowne Plaza Manila Galleria, Quezon City, Philippines',
-		href: 'https://psa.gov.ph/sites/default/files/3.5.1%20Stochastic%20Gradient%20Hamiltonian%20Monte%20Carlo%20on%20Bayesian%20Time%20Series%20Modeling_0.pdf',
+		href: 'https://www.researchgate.net/publication/380818508_Stochastic_Gradient_Hamiltonian_Monte_Carlo_on_Bayesian_Time_Series_Modeling',
 		application: '📈'
 	},
 	{
