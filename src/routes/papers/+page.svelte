@@ -50,7 +50,7 @@
 				<li>
 					{#if paper['author'].length > 1}
 						{#each paper['author'] as author, k}
-							{#if author.includes('A.A.B.')}
+							{#if author.includes('A.-A. B.')}
 								<u>{author}</u>
 							{:else}
 								{author}
