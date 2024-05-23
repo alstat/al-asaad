@@ -64,7 +64,7 @@ export let papers: Paper[];
 papers = [
 	{
 		type: 'thesis',
-		author: ['Asaad, A.A.B.'],
+		author: ['Asaad, A.-A. B.'],
 		year: 2017,
 		title:
 			'Bayesian Autoregressive Distributed Lag via Stochastic Gradient Hamiltonian Monte Carlo',
@@ -74,7 +74,7 @@ papers = [
 	},
 	{
 		type: 'thesis',
-		author: ['Asaad, A.A.B.'],
+		author: ['Asaad, A.-A. B.'],
 		year: 2013,
 		title: 'Seasonal space-time autoregressive integrated moving average modeling',
 		publisher: 'Undergraduate Thesis',
@@ -83,7 +83,7 @@ papers = [
 	},
 	{
 		type: 'journal',
-		author: ['Asaad, A.A.B.'],
+		author: ['Asaad, A.-A. B.'],
 		year: 2023,
 		title:
 			'Multi-step forecasting of the Philippine storm frequencies using Poisson neural network',
@@ -96,7 +96,7 @@ papers = [
 	},
 	{
 		type: 'journal',
-		author: ['Asaad, A.A.B.'],
+		author: ['Asaad, A.-A. B.'],
 		year: 2022,
 		title: 'Circular characteristics of the philippine storm tracks',
 		journal: 'Spatial Information Research',
@@ -108,7 +108,7 @@ papers = [
 	},
 	{
 		type: 'journal',
-		author: ['Asaad, A.A.B.', 'Salvacion, A.R.', 'Yen, B.T.'],
+		author: ['Asaad, A.-A. B.', 'Salvacion, A.R.', 'Yen, B.T.'],
 		year: 2022,
 		title: 'ALUES: R package for Agricultural Land Use Evaluation System',
 		journal: 'Journal of Open Source Software',
@@ -120,7 +120,7 @@ papers = [
 	},
 	{
 		type: 'conference',
-		author: ['Asaad, A.A.B.'],
+		author: ['Asaad, A.-A. B.'],
 		year: 2022,
 		title: 'Bayesian log-linear Poisson Autoregressive Model',
 		proceeding: '15th National Convention on Statistics',
@@ -130,7 +130,7 @@ papers = [
 	},
 	{
 		type: 'conference',
-		author: ['Asaad, A.A.B.', 'Morales, M.L.R.'],
+		author: ['Asaad, A.-A. B.', 'Morales, M.L.R.'],
 		year: 2022,
 		title: 'On the rolling forecast of the LightGBM for multi-step forecasting',
 		proceeding: '15th National Convention on Statistics',
@@ -140,7 +140,7 @@ papers = [
 	},
 	{
 		type: 'conference',
-		author: ['Asaad, A.A.B.'],
+		author: ['Asaad, A.-A. B.'],
 		year: 2021,
 		title: 'QuranTree.jl: A Julia Package for Quranic Arabic Corpus',
 		proceeding: 'Proceedings of the Sixth Arabic Natural Language Processing Workshop',
@@ -152,7 +152,7 @@ papers = [
 	},
 	{
 		type: 'conference',
-		author: ['Asaad, A.A.B.', 'Magadia, J.C.'],
+		author: ['Asaad, A.-A. B.', 'Magadia, J.C.'],
 		year: 2019,
 		title: 'Stochastic Gradient Hamiltonian Monte Carlo on Bayesian Time Series Modeling',
 		proceeding: '14th National Convention on Statistics',
@@ -168,7 +168,7 @@ papers = [
 			'Robles, G.J.M.',
 			'Asa, A.D.D.C.',
 			'Cobar, M.L.C.',
-			'Asaad, A.A.B.'
+			'Asaad, A.-A. B.'
 		],
 		year: 2016,
 		title:
@@ -187,7 +187,7 @@ papers = [
 			'Del Prado, D.G.L.',
 			'Castillo, P.G.S.',
 			'Poliquit, I.A.R.',
-			'Asaad, A.A.B.'
+			'Asaad, A.-A. B.'
 		],
 		year: 2016,
 		title: 'Enhancement of the Composite Leading Economic Indicator System of the Philippines',
