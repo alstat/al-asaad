@@ -65,6 +65,15 @@ papers = [
 	{
 		type: 'thesis',
 		author: ['Asaad, A.-A. B.'],
+		year: 2025,
+		title: "Text Analytics of the Qur'ān",
+		publisher: "Master's Thesis",
+		href: 'https://drive.google.com/file/d/17wyCGO_5YqfEAWpSnmsod8bk01ewfS2p/view',
+		application: '☪️'
+	},
+	{
+		type: 'thesis',
+		author: ['Asaad, A.-A. B.'],
 		year: 2017,
 		title:
 			'Bayesian Autoregressive Distributed Lag via Stochastic Gradient Hamiltonian Monte Carlo',
