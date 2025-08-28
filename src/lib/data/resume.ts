@@ -104,13 +104,13 @@ interface School {
 export const schools: School[] = [
 	{
 		degree: 'Master of Arts in Islamic Studies',
-		schoolYear: 'Aug 2022 - present',
+		schoolYear: 'Aug 2022 - July 2025',
 		school: 'Institute of Islamic Studies',
 		university: 'University of the Philippines Diliman',
 		address: 'Quezon City, Philippines',
 		logoAlt: 'UPD Logo',
 		href: 'https://iis.upd.edu.ph/',
-		research: 'Arabic NLP, Islamicate Digital Humanities'
+		research: "Text Analytics of the Qur'ān"
 	},
 	{
 		degree: 'Master of Science in Statistics',
