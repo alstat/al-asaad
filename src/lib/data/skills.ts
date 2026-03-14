@@ -27,15 +27,15 @@ export const progLangs: Skill[] = [
 		percent: 100
 	},
 	{
-		skill: 'JS',
-		percent: 90
-	},
-	{
-		skill: 'TS',
-		percent: 70
+		skill: 'Typescript',
+		percent: 80
 	},
 	{
 		skill: 'Svelte',
+		percent: 80
+	},
+	{
+		skill: 'Rust',
 		percent: 60
 	}
 ];
@@ -51,7 +51,7 @@ const natLangs: Skill[] = [
 	},
 	{
 		skill: 'Arabic',
-		percent: 20
+		percent: 30
 	},
 	{
 		skill: 'Bisaya',

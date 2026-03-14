@@ -9,6 +9,7 @@ import psa from '$lib/images/psa-logo.png';
 import upd from '$lib/images/upd-logo.png';
 import iit from '$lib/images/iit-logo.png';
 import tcto from '$lib/images/tcto-logo.png';
+import bc from '$lib/images/british-council.png';
 
 interface WorkExperience {
 	company: string;
@@ -19,11 +20,19 @@ interface WorkExperience {
 	href: string;
 }
 
-export const workLogos = [jnj, adi, ubp, aev, nm, dg, pgc, psa];
+export const workLogos = [upd, jnj, bc, adi, ubp, aev, nm, dg, pgc, psa];
 
 export const schoolLogos = [upd, upd, iit, tcto, tcto];
 
 export const workExperiences: WorkExperience[] = [
+	{
+		company: 'University of the Philippines Diliman',
+		position: ['Senior Lecturer II (Part-Time)'],
+		dateRange: 'Jan 2026 - present',
+		address: 'Quezon City, Philippines',
+		logoAlt: 'UPD Logo',
+		href: 'https://iis.upd.edu.ph/'
+	},
 	{
 		company: 'Johnson & Johnson',
 		position: ['Manager, Advanced Analytics'],
@@ -31,6 +40,14 @@ export const workExperiences: WorkExperience[] = [
 		address: 'Parañaque City, Philippines',
 		logoAlt: 'JnJ Logo',
 		href: 'https://www.jnj.com/'
+	},
+	{
+		company: 'British Council',
+		position: ['Statistician (Part-Time)'],
+		dateRange: 'Oct 2024 - Jun 2025',
+		address: 'Quezon City, Philippines',
+		logoAlt: 'BC Logo',
+		href: 'https://www.britishcouncil.org/'
 	},
 	{
 		company: 'Aboitiz Data Innovation',

@@ -3,29 +3,38 @@
 </script>
 
 <footer>
-	<p class="footer-arabic"><br />{config.footerText}</p>
+	<div class="container footer-inner">
+		<span class="arabic-text">{config.footerText}</span>
+		<span class="copy">© {new Date().getFullYear()} Al-Ahmadgaid B. Asaad</span>
+	</div>
 </footer>
 
 <style>
-	.footer-arabic {
-		font-family: 'El Messiri', sans-serif;
-		background: linear-gradient(to left, #003591 0%, #7e0094 100%);
+	footer {
+		border-top: 1px solid var(--border);
+		padding: 32px 0;
+	}
+
+	.footer-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.arabic-text {
+		font-family: var(--font-arabic);
+		font-size: 24px;
+		font-weight: 600;
+		background: linear-gradient(to right, #3b82f6, #a855f7);
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		text-align: center;
-	}
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
 	}
 
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
+	.copy {
+		font-size: 13px;
+		color: var(--text-3);
 	}
 </style>

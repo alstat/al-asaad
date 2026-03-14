@@ -1,135 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=El+Messiri:wght@600&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=El+Messiri:wght@400;600&family=Saira+Condensed:wght@300;400;500;600&display=swap');
 
 :root {
-	--font-body: 'Saira Condensed', sans-serif;
-	--color-bg-0: rgb(63, 0, 59);
-	--color-bg-1: hsl(282, 100%, 13%);
-	--color-bg-2: hsl(281, 85%, 8%);
-	--color-theme-1: #ffae00;
-	--color-theme-2: #4075a6;
-	--color-text: rgba(255, 228, 188, 0.7);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
-	--font-family: var(--font-body);
-	color: var(--color-text);
+  --font-sans:   -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-label:  'Saira Condensed', sans-serif;
+  --font-arabic: 'El Messiri', sans-serif;
+  --font-quran:  'Amiri Quran', serif;
+
+  /* Dark (default) */
+  --bg:        #000000;
+  --surface:   #0a0a0a;
+  --surface-2: #1c1c1e;
+  --text:      #f5f5f7;
+  --text-2:    rgba(245,245,247,.60);
+  --text-3:    rgba(245,245,247,.34);
+  --accent:    #ffae00;
+  --accent-dim:rgba(255,174,0,.13);
+  --border:    rgba(255,255,255,.08);
+  --border-2:  rgba(255,255,255,.15);
+  --glass:     rgba(0,0,0,.78);
+  --card-shadow:       0 0 0 1px var(--border), 0 20px 60px rgba(0,0,0,.45);
+  --card-shadow-hover: 0 0 0 1px var(--border-2), 0 28px 72px rgba(0,0,0,.55);
+
+  /* Layout */
+  --max:   1080px;
+  --nav-h: 64px;
+  --pad-x: clamp(20px, 5vw, 60px);
+  --r:     14px;
+  --r-lg:  22px;
+  --ease:  cubic-bezier(.25,.1,.25,1);
+}
+
+[data-theme="light"] {
+  --bg:        #ffffff;
+  --surface:   #f5f5f7;
+  --surface-2: #e8e8ed;
+  --text:      #1d1d1f;
+  --text-2:    rgba(29,29,31,.60);
+  --text-3:    rgba(29,29,31,.34);
+  --accent:    #c47a00;
+  --accent-dim:rgba(196,122,0,.11);
+  --border:    rgba(0,0,0,.07);
+  --border-2:  rgba(0,0,0,.13);
+  --glass:     rgba(255,255,255,.78);
+  --card-shadow:       0 0 0 1px var(--border), 0 20px 60px rgba(0,0,0,.06);
+  --card-shadow-hover: 0 0 0 1px var(--border-2), 0 28px 72px rgba(0,0,0,.10);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 20px);
 }
 
 body {
-	min-height: 100vh;
-	margin: 0;
-	background-attachment: fixed;
-	background-color: var(--color-bg-1);
-	background-size: 100vw 100vh;
-	background-image: radial-gradient(
-			50% 50% at 50% 50%,
-			rgba(43, 0, 27, 0.75) 0%,
-			rgba(255, 255, 255, 0) 100%
-		),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
-	font-family: var(--font-family);
-	font-size: 14pt;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background .3s, color .3s;
 }
 
-h1,
-h2,
-p {
-	font-weight: 400;
+img { max-width: 100%; display: block; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.arabic { font-family: var(--font-quran); }
+
+/* Layout */
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
 }
 
-p {
-	line-height: 1.5;
+/* Eyebrow label */
+.label {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
 }
 
-a {
-	color: var(--color-theme-1);
-	text-decoration: none;
+/* Section heading */
+.section-title {
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+  color: var(--text);
 }
 
-a:hover {
-	text-decoration: underline;
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .75s var(--ease), transform .75s var(--ease);
 }
+.reveal.in { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: .10s; }
+.reveal-d2 { transition-delay: .18s; }
+.reveal-d3 { transition-delay: .26s; }
+.reveal-d4 { transition-delay: .34s; }
+.reveal-d5 { transition-delay: .42s; }
 
-h1 {
-	font-size: 2rem;
-	text-align: center;
-	background: #00ff00;
-	background: linear-gradient(to left, #bbff00 0%, #005eff 25%, #ff0000 100%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+/* Pill button */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  border: 1px solid var(--border-2);
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s;
+  text-decoration: none;
 }
+.pill:hover { background: var(--surface-2); border-color: var(--border-2); text-decoration: none; transform: translateY(-1px); }
+.pill-accent { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
+.pill-accent:hover { opacity: .88; transform: translateY(-1px); }
 
-h2 {
-	font-size: 1rem;
-}
-
-pre {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--color-text);
-}
-
-.text-column {
-	display: flex;
-	max-width: 600px;
-	flex: 0.6;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-}
-
-input,
-button {
-	font-size: inherit;
-	font-family: inherit;
-}
-
-button:focus:not(:focus-visible) {
-	outline: none;
-}
-
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
-	}
-}
-
+/* Visually hidden */
 .visually-hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: auto;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
-}
-
-div.title-emphasis {
-	font-family: 'Yellowtail', cursive;
-	font-size: 25pt;
-	text-align: center;
-	background: #00ff00;
-	background: linear-gradient(to left, #bbff00 0%, #005eff 25%, #ff0000 100%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-.arabic {
-	font-family: 'Amiri Quran', serif;
-}
-
-@media (hover: none) {
-	body {
-		background-attachment: initial;
-		background-color: hsl(283, 100%, 10%);
-		background-size: 100vw 100vh;
-		background-image: none;
-	}
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
 }

@@ -4,109 +4,75 @@
 	let skills = Object.keys(skillsData) as Array<keyof SkillsData>;
 </script>
 
-{#each skills as skill, i}
-	<div class="skills-header">
-		{skillsData[skill]['label']}
-	</div>
-	<div class="container">
-		{#each skillsData[skill]['data'] as data, j}
-			{#if j < 3}
-				<div class="skill-container">
-					<div
-						class="gauge"
-						role="progressbar"
-						aria-valuenow={data['percent']}
-						style="--value:{data['percent']}"
-					/>
-					<div class="skill">
-						{data['skill']}
+<div class="skills-wrap">
+	{#each skills as skill}
+		<div class="skill-group reveal">
+			<h3 class="group-title">{skillsData[skill].label}</h3>
+			<div class="skill-list">
+				{#each skillsData[skill].data as item}
+					<div class="skill-row">
+						<span class="skill-name">{item.skill}</span>
+						<div class="dots" aria-label="{item.percent}% proficiency">
+							{#each { length: 5 } as _, i}
+								<div class="dot" class:filled={i < Math.round(item.percent / 20)}></div>
+							{/each}
+						</div>
 					</div>
-				</div>
-			{/if}
-		{/each}
-	</div>
-	<div class="container">
-		{#each skillsData[skill]['data'].slice(3) as data, j}
-			<div class="skill-container">
-				<div
-					class="gauge"
-					role="progressbar"
-					aria-valuenow={data['percent']}
-					style="--value:{data['percent']}"
-				/>
-				<div class="skill">
-					{data['skill']}
-				</div>
+				{/each}
 			</div>
-		{/each}
-	</div>
-	<br /><br />
-{/each}
+		</div>
+	{/each}
+</div>
 
 <style>
-	.skills-header {
-		text-align: center;
-		font-weight: bold;
-		margin-bottom: 20px;
-		color: var(--color-theme-0);
-	}
-	.container {
-		display: flex;
-		justify-content: center;
-		align-content: center;
-	}
-	.skill-container {
-		display: inline-block;
-		text-align: center;
-		padding: 20px;
-	}
-	.gauge {
-		display: block;
-	}
-	.skill {
-		display: block;
-	}
-	@keyframes growProgressBar {
-		0%,
-		33% {
-			--pgPercentage: 0;
-		}
-		100% {
-			--pgPercentage: var(--value);
-		}
-	}
-
-	@property --pgPercentage {
-		syntax: '<number>';
-		inherits: false;
-		initial-value: 0;
-	}
-
-	div[role='progressbar'] {
-		--size: 5rem;
-		--fg: var(--color-theme-1);
-		--bg: var(--color-bg-0);
-		--pgPercentage: var(--value);
-		animation: growProgressBar 3s 1 forwards;
-		width: var(--size);
-		height: var(--size);
-		border-radius: 50%;
+	.skills-wrap {
 		display: grid;
-		place-items: center;
-		background: radial-gradient(
-				closest-side,
-				var(--color-bg-1) 80%,
-				transparent 0 99.9%,
-				var(--color-bg-0) 0
-			),
-			conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
-		font-family: Helvetica, Arial, sans-serif;
-		font-size: calc(var(--size) / 5);
-		color: var(--fg);
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 40px;
 	}
 
-	div[role='progressbar']::before {
-		counter-reset: percentage var(--value);
-		content: counter(percentage) '%';
+	.group-title {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--text-3);
+		margin-bottom: 20px;
+	}
+
+	.skill-list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.skill-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	.skill-name {
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--text);
+	}
+
+	.dots {
+		display: flex;
+		gap: 5px;
+	}
+
+	.dot {
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		background: var(--border-2);
+		transition: background 0.3s;
+	}
+
+	.dot.filled {
+		background: var(--accent);
 	}
 </style>

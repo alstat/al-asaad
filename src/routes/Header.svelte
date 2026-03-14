@@ -1,111 +1,124 @@
-<script>
-	import { base } from '$app/paths';
+<script lang="ts">
 	import { page } from '$app/stores';
 	import logo from '$lib/images/alasaad-logo.svg';
+	import { theme } from '$lib/stores/theme';
+	import { Sun, Moon } from 'lucide-svelte';
+	import { onMount } from 'svelte';
+
+	let scrolled = $state(false);
+
+	onMount(() => {
+		const handle = () => {
+			scrolled = window.scrollY > 10;
+		};
+		window.addEventListener('scroll', handle, { passive: true });
+		return () => window.removeEventListener('scroll', handle);
+	});
 </script>
 
-<header>
-	<div class="corner" />
+<header class:scrolled>
+	<div class="container nav-inner">
+		<a href="/" class="logo-link" aria-label="Home">
+			<img src={logo} alt="Al" width="28" height="28" />
+		</a>
 
-	<nav>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">
-					<img src={logo} alt="SvelteKit" class="nav-logo" />
-				</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/papers' ? 'page' : undefined}>
-				<a href="/papers">Papers</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/resume' ? 'page' : undefined}>
-				<a href="/resume">Résumé</a>
-			</li>
-			<!-- <li aria-current={$page.url.pathname === '/ai-projects' ? 'page' : undefined}>
-				<a href="/ai-projects">A.I.</a>
-			</li> -->
-		</ul>
-	</nav>
+		<nav aria-label="Main navigation">
+			<a href="/" class:active={$page.url.pathname === '/'}>Home</a>
+			<a href="/papers" class:active={$page.url.pathname === '/papers'}>Papers</a>
+			<a href="/resume" class:active={$page.url.pathname === '/resume'}>Résumé</a>
+		</nav>
 
-	<div class="corner" />
+		<button
+			class="toggle"
+			onclick={theme.toggle}
+			aria-label={$theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+		>
+			{#if $theme === 'dark'}<Sun size={17} />{:else}<Moon size={17} />{/if}
+		</button>
+	</div>
 </header>
 
 <style>
 	header {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
-	.nav-logo {
-		display: inline;
-		padding-right: 0px;
-		width: 32.64px;
-	}
-	nav {
-		--background: rgba(255, 255, 255, 0.05);
-		display: flex;
-		justify-content: center;
-		backdrop-filter: blur(40px);
-		-webkit-backdrop-filter: blur(40px);
-		background-clip: content-box;
-		-webkit-background-clip: content-box;
-		--box-shadow: 0px 10px 10px rgba(46, 54, 68, 0.03);
-		width: 100%;
 		position: fixed;
-		left: 50%;
-		margin-left: -49.9%;
-		overflow: hidden;
-		z-index: 2;
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
 		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
+		left: 0;
+		right: 0;
+		z-index: 100;
+		height: var(--nav-h);
+		border-bottom: 1px solid transparent;
+		transition: background 0.3s, border-color 0.3s;
+	}
+	header.scrolled {
+		background: var(--glass);
+		backdrop-filter: blur(20px) saturate(180%);
+		-webkit-backdrop-filter: blur(20px) saturate(180%);
+		border-color: var(--border);
 	}
 
-	nav a {
+	.nav-inner {
 		display: flex;
-		height: 100%;
 		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
+		justify-content: space-between;
+		height: var(--nav-h);
 	}
 
-	a:hover {
-		color: var(--color-theme-1);
+	.logo-link {
+		display: flex;
+		align-items: center;
+		opacity: 0.8;
+		transition: opacity 0.2s;
+		text-decoration: none;
+	}
+	.logo-link:hover {
+		opacity: 1;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		gap: 2px;
+	}
+	nav a {
+		padding: 7px 14px;
+		border-radius: var(--r);
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--text-2);
+		transition: color 0.2s, background 0.2s;
+		text-decoration: none;
+	}
+	nav a:hover {
+		color: var(--text);
+	}
+	nav a.active {
+		color: var(--text);
+		background: var(--surface-2);
+	}
+
+	.toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: var(--r);
+		border: 1px solid var(--border);
+		background: transparent;
+		color: var(--text-2);
+		cursor: pointer;
+		transition: color 0.2s, border-color 0.2s, background 0.2s;
+	}
+	.toggle:hover {
+		color: var(--text);
+		border-color: var(--border-2);
+		background: var(--surface);
+	}
+
+	@media (max-width: 500px) {
+		nav a {
+			padding: 7px 10px;
+			font-size: 13px;
+		}
 	}
 </style>
