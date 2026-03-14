@@ -16,9 +16,7 @@
 	<div class="container hero-inner">
 		<div class="hero-text">
 			<p class="label reveal">Assalamu 'Alaikum</p>
-			<h1 class="hero-name reveal reveal-d1">
-				Al-Ahmadgaid<br />"Al" B. Asaad
-			</h1>
+			<h1 class="hero-name reveal reveal-d1">Al-Ahmadgaid B. Asaad</h1>
 			<p class="hero-role reveal reveal-d2">Statistician · Data Scientist · Researcher</p>
 			<p class="hero-bio reveal reveal-d3">
 				Manager of Advanced Analytics at <a href="https://www.jnj.com/">Johnson &amp; Johnson</a>,
