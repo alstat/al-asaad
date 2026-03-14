@@ -31,7 +31,7 @@
 		<section class="pub-section">
 			<h2 class="section-label">Theses</h2>
 			<div class="pub-list">
-				{#each theses as thesis, i}
+				{#each theses as thesis, i (thesis.title)}
 					<div class="pub-item reveal reveal-d{Math.min(i + 1, 5)}">
 						<div class="pub-meta">
 							<span class="pub-year">{thesis.year}</span>
@@ -40,7 +40,7 @@
 						</div>
 						<div class="pub-body">
 							<p class="pub-title">
-								<a href={thesis.href} target="_blank" rel="noopener">{thesis.title}</a>
+								<a href={thesis.href} target="_blank" rel="external noopener">{thesis.title}</a>
 							</p>
 							<div class="pub-details">
 								<span class="pub-author">{thesis.author}</span>
@@ -53,11 +53,11 @@
 		</section>
 
 		<!-- By year -->
-		{#each years as year}
+		{#each years as year (year)}
 			<section class="pub-section">
 				<h2 class="section-label">{year}</h2>
 				<div class="pub-list">
-					{#each byYear[year] as paper, i}
+					{#each byYear[year] as paper, i (paper.title)}
 						<div class="pub-item reveal reveal-d{Math.min(i + 1, 5)}">
 							<div class="pub-meta">
 								<span
@@ -69,12 +69,12 @@
 							</div>
 							<div class="pub-body">
 								<p class="pub-title">
-									<a href={paper.href} target="_blank" rel="noopener">{paper.title}</a>
+									<a href={paper.href} target="_blank" rel="external noopener">{paper.title}</a>
 								</p>
 								<div class="pub-details">
 									<span class="pub-author">
 										{#if Array.isArray(paper.author)}
-											{#each paper.author as a, k}
+											{#each paper.author as a, k (k)}
 												{#if a.includes('A.-A. B.')}
 													<strong>{a}</strong>
 												{:else}

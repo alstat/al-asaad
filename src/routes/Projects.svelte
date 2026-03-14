@@ -19,7 +19,7 @@
 					rel="noopener"
 				>
 					<div class="card-logo">
-						<img src={project.logo} alt={project.label} />
+						<img src={project.logo} alt={project.label} loading="lazy" decoding="async" />
 					</div>
 					<div class="card-body">
 						<h3>{project.label}</h3>

@@ -1,15 +1,15 @@
-import jnj from '$lib/images/jnj-logo.png';
-import adi from '$lib/images/adi-logo.png';
-import ubp from '$lib/images/ubp-logo.png';
-import aev from '$lib/images/aev-logo.png';
-import nm from '$lib/images/nm-logo.png';
-import dg from '$lib/images/dg-logo.png';
-import pgc from '$lib/images/pgc-logo.png';
-import psa from '$lib/images/psa-logo.png';
-import upd from '$lib/images/upd-logo.png';
-import iit from '$lib/images/iit-logo.png';
-import tcto from '$lib/images/tcto-logo.png';
-import bc from '$lib/images/british-council.png';
+import jnj from '$lib/images/jnj-logo.png?enhanced';
+import adi from '$lib/images/adi-logo.png?enhanced';
+import ubp from '$lib/images/ubp-logo.png?enhanced';
+import aev from '$lib/images/aev-logo.png?enhanced';
+import nm from '$lib/images/nm-logo.png?enhanced';
+import dg from '$lib/images/dg-logo.png?enhanced';
+import pgc from '$lib/images/pgc-logo.png?enhanced';
+import psa from '$lib/images/psa-logo.png?enhanced';
+import upd from '$lib/images/upd-logo.png?enhanced';
+import iit from '$lib/images/iit-logo.png?enhanced';
+import tcto from '$lib/images/tcto-logo.png?enhanced';
+import bc from '$lib/images/british-council.png?enhanced';
 
 interface WorkExperience {
 	company: string;

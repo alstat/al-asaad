@@ -19,11 +19,11 @@
 			<h1 class="hero-name reveal reveal-d1">Al-Ahmadgaid B. Asaad</h1>
 			<p class="hero-role reveal reveal-d2">Statistician · Data Scientist · Researcher</p>
 			<p class="hero-bio reveal reveal-d3">
-				Manager of Advanced Analytics at <a href="https://www.jnj.com/">Johnson &amp; Johnson</a>,
-				based in the Philippines, and a Senior Lecturer at
+				Manager of Advanced Analytics at <a href="https://www.jnj.com/">Johnson &amp; Johnson</a>
+				and Senior Lecturer at
 				<a href="https://upd.edu.ph/">University of the Philippines Diliman</a>. I work at the
-				intersection of statistics, machine learning, and language—building tools and publishing
-				research in both data science and Islamic studies.
+				intersection of statistics, machine learning, and humanities, building thoughtfully designed
+				tools while publishing research in both data science and Islamic studies.
 			</p>
 			<div class="hero-actions reveal reveal-d4">
 				<a
@@ -146,6 +146,10 @@
 			width: min(260px, 75vw);
 			aspect-ratio: 1/1;
 			border-radius: 50%;
+		}
+		.hero-photo :global(img),
+		.hero-photo :global(picture) {
+			object-position: center 20%;
 		}
 	}
 </style>

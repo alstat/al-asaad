@@ -25,7 +25,7 @@
 					<div class="timeline-item reveal reveal-d{Math.min(i + 1, 5)}">
 						<div class="tl-logo">
 							<a href={work.href} target="_blank" rel="noopener">
-								<img src={workLogos[i]} alt={work.logoAlt} />
+								<enhanced:img src={workLogos[i]} alt={work.logoAlt} sizes="48px" />
 							</a>
 						</div>
 						<div class="tl-body">
@@ -68,7 +68,7 @@
 					<div class="timeline-item reveal reveal-d{Math.min(i + 1, 5)}">
 						<div class="tl-logo">
 							<a href={school.href} target="_blank" rel="noopener">
-								<img src={schoolLogos[i]} alt={school.logoAlt} />
+								<enhanced:img src={schoolLogos[i]} alt={school.logoAlt} sizes="48px" />
 							</a>
 						</div>
 						<div class="tl-body">

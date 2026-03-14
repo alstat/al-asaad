@@ -60,8 +60,7 @@ export type PaperKeys = KeysOfUnion<Paper>;
 //     "publisher", "proceeding", "address"
 // ];
 
-export let papers: Paper[];
-papers = [
+export const papers: Paper[] = [
 	{
 		type: 'thesis',
 		author: ['Asaad, A.-A. B.'],

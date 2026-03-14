@@ -27,10 +27,7 @@
 		font-family: var(--font-arabic);
 		font-size: 24px;
 		font-weight: 600;
-		background: linear-gradient(to right, #3b82f6, #a855f7);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
+		color: var(--accent);
 	}
 
 	.copy {
