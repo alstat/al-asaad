@@ -1,10 +1,41 @@
 <script lang="ts">
 	import { projects } from '$lib/data/projects';
+	import ayahLabLogo from '$lib/images/ayahlab.png';
 </script>
 
 <div class="section">
 	<div class="container">
 		<p class="label reveal">Software</p>
+
+		<!-- Applications section -->
+		<h2 class="section-title reveal reveal-d1">Applications</h2>
+		<p class="section-sub reveal reveal-d2">Desktop application for Quranic study — built by me.</p>
+
+		<div class="app-grid">
+			<a
+				href="https://ayahlab.com"
+				class="card app-card reveal reveal-d3"
+				target="_blank"
+				rel="noopener"
+			>
+				<div class="app-badge">My App</div>
+				<div class="card-logo app-logo">
+					<img src={ayahLabLogo} alt="AyahLab" loading="lazy" decoding="async" />
+				</div>
+				<div class="card-body">
+					<h3>AyahLab</h3>
+					<p>
+						Study the Quran. Deeply. — A free, offline, private desktop app for comprehensive
+						Quranic study. Available for Windows, macOS, and Linux.
+					</p>
+				</div>
+				<span class="card-arrow" aria-hidden="true">↗</span>
+			</a>
+		</div>
+
+		<div class="section-divider"></div>
+
+		<!-- Open Source section -->
 		<h2 class="section-title reveal reveal-d1">Open Source</h2>
 		<p class="section-sub reveal reveal-d2">
 			Julia, R, and Python packages for data science, NLP, and Islamic text analysis.
@@ -108,6 +139,46 @@
 		font-size: 14px;
 		color: var(--text-2);
 		line-height: 1.55;
+	}
+
+	.app-grid {
+		display: grid;
+		grid-template-columns: minmax(280px, 480px);
+		gap: 14px;
+		margin-bottom: 0;
+	}
+
+	.app-card {
+		border-color: var(--accent);
+		background: color-mix(in srgb, var(--accent) 4%, var(--bg));
+	}
+	.app-card:hover {
+		border-color: var(--accent);
+		background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+	}
+
+	.app-badge {
+		position: absolute;
+		top: 16px;
+		left: 28px;
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--accent);
+		background: color-mix(in srgb, var(--accent) 12%, transparent);
+		padding: 3px 8px;
+		border-radius: 20px;
+	}
+
+	.app-logo {
+		width: 64px;
+		height: 64px;
+		margin-top: 28px;
+	}
+
+	.section-divider {
+		margin-bottom: clamp(48px, 8vw, 80px);
 	}
 
 	.card-arrow {
