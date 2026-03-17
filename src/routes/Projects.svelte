@@ -42,12 +42,12 @@
 		</p>
 
 		<div class="grid">
-			{#each projects as project, i}
+			{#each projects as project, i (project.label)}
 				<a
 					href={project.href}
 					class="card reveal reveal-d{Math.min(i + 1, 5)}"
 					target="_blank"
-					rel="noopener"
+					rel="external noopener"
 				>
 					<div class="card-logo">
 						<img src={project.logo} alt={project.label} loading="lazy" decoding="async" />
