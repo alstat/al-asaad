@@ -38,7 +38,7 @@
 		<!-- Open Source section -->
 		<h2 class="section-title reveal reveal-d1">Open Source</h2>
 		<p class="section-sub reveal reveal-d2">
-			Julia and R packages for data science, NLP, and Islamic text analysis.
+			Julia and R packages for data science and Islamic text analysis.
 		</p>
 
 		<div class="grid">
