@@ -38,7 +38,7 @@
 		<!-- Open Source section -->
 		<h2 class="section-title reveal reveal-d1">Open Source</h2>
 		<p class="section-sub reveal reveal-d2">
-			Julia, R, and Python packages for data science, NLP, and Islamic text analysis.
+			Julia and R packages for data science, NLP, and Islamic text analysis.
 		</p>
 
 		<div class="grid">
@@ -99,7 +99,10 @@
 		box-shadow: var(--card-shadow);
 		text-decoration: none;
 		color: var(--text);
-		transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s;
+		transition:
+			transform 0.25s var(--ease),
+			box-shadow 0.25s var(--ease),
+			border-color 0.25s;
 	}
 	.card:hover {
 		transform: translateY(-5px);
@@ -187,7 +190,9 @@
 		right: 24px;
 		font-size: 16px;
 		color: var(--text-3);
-		transition: color 0.2s, transform 0.2s;
+		transition:
+			color 0.2s,
+			transform 0.2s;
 	}
 	.card:hover .card-arrow {
 		color: var(--accent);
