@@ -6,25 +6,28 @@
 
 <svelte:head>
 	<title>Résumé · Al-Ahmadgaid B. Asaad</title>
-	<meta name="description" content="Al-Ahmadgaid B. Asaad's résumé — work, skills, and education." />
+	<meta
+		name="description"
+		content="Al-Ahmadgaid B. Asaad's résumé — work, skills, and education."
+	/>
 </svelte:head>
 
 <div class="page">
 	<div class="container">
-
 		<div class="page-header">
-			<p class="label">Background</p>
+			<p class="label">cat ./resume.txt</p>
 			<h1 class="page-title">Experience &amp; Education</h1>
+			<p class="updated">Last updated: 2026 / Status: active</p>
 		</div>
 
 		<!-- Work Experience -->
 		<section class="section">
-			<h2 class="section-label">Work</h2>
+			<h2 class="section-label"><span>01</span> Work</h2>
 			<div class="timeline">
 				{#each workExperiences as work, i}
 					<div class="timeline-item reveal reveal-d{Math.min(i + 1, 5)}">
 						<div class="tl-logo">
-							<a href={work.href} target="_blank" rel="noopener">
+							<a href={work.href} target="_blank" rel="noopener" aria-label={work.company}>
 								<enhanced:img src={workLogos[i]} alt={work.logoAlt} sizes="48px" />
 							</a>
 						</div>
@@ -44,9 +47,7 @@
 									<span class="role-date">{work.dateRange}</span>
 								</div>
 							{/if}
-							<a href={work.href} class="company" target="_blank" rel="noopener"
-								>{work.company}</a
-							>
+							<a href={work.href} class="company" target="_blank" rel="noopener">{work.company}</a>
 							<span class="address">{work.address}</span>
 						</div>
 					</div>
@@ -56,18 +57,18 @@
 
 		<!-- Skills -->
 		<section class="section">
-			<h2 class="section-label">Skills</h2>
+			<h2 class="section-label"><span>02</span> Skills</h2>
 			<Skills />
 		</section>
 
 		<!-- Education -->
 		<section class="section">
-			<h2 class="section-label">Education</h2>
+			<h2 class="section-label"><span>03</span> Education</h2>
 			<div class="timeline">
 				{#each schools as school, i}
 					<div class="timeline-item reveal reveal-d{Math.min(i + 1, 5)}">
 						<div class="tl-logo">
-							<a href={school.href} target="_blank" rel="noopener">
+							<a href={school.href} target="_blank" rel="noopener" aria-label={school.school}>
 								<enhanced:img src={schoolLogos[i]} alt={school.logoAlt} sizes="48px" />
 							</a>
 						</div>
@@ -88,7 +89,6 @@
 				{/each}
 			</div>
 		</section>
-
 	</div>
 </div>
 
@@ -104,10 +104,25 @@
 	.page-title {
 		font-size: clamp(36px, 5.5vw, 64px);
 		font-weight: 700;
-		letter-spacing: -0.04em;
+		letter-spacing: -0.06em;
 		line-height: 1.08;
 		color: var(--text);
 		margin-top: 10px;
+	}
+	.page-title::before {
+		content: '> ';
+		color: var(--accent);
+	}
+	.page-title::after {
+		content: '_';
+		color: var(--accent);
+		animation: blink 1.1s steps(1) infinite;
+	}
+	.updated {
+		margin-top: 20px;
+		font-size: 10px;
+		color: var(--text-3);
+		letter-spacing: 0.06em;
 	}
 
 	.section {
@@ -119,10 +134,14 @@
 		font-weight: 600;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		color: var(--text-3);
+		color: var(--text-2);
 		border-bottom: 1px solid var(--border);
 		padding-bottom: 12px;
 		margin-bottom: 28px;
+	}
+	.section-label span {
+		color: var(--accent);
+		margin-right: 10px;
 	}
 
 	/* Timeline */
@@ -134,8 +153,15 @@
 	.timeline-item {
 		display: flex;
 		gap: 20px;
-		padding: 22px 0;
+		padding: 22px 14px;
 		border-bottom: 1px solid var(--border);
+		transition:
+			background 0.2s,
+			box-shadow 0.2s;
+	}
+	.timeline-item:hover {
+		background: var(--accent-dim);
+		box-shadow: inset 2px 0 var(--accent);
 	}
 	.timeline-item:last-child {
 		border-bottom: none;
@@ -145,7 +171,7 @@
 		flex-shrink: 0;
 		width: 48px;
 		height: 48px;
-		border-radius: 12px;
+		border-radius: 2px;
 		border: 1px solid var(--border);
 		background: var(--surface);
 		overflow: hidden;
@@ -154,7 +180,7 @@
 		justify-content: center;
 		padding: 6px;
 	}
-	.tl-logo img {
+	.tl-logo :global(img) {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;

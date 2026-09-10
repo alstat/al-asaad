@@ -21,7 +21,10 @@
 			const el = document.getElementById(id);
 			if (!el) return;
 			const observer = new IntersectionObserver(
-				(entries) => entries.forEach((e) => { if (e.isIntersecting) activeId = id; }),
+				(entries) =>
+					entries.forEach((e) => {
+						if (e.isIntersecting) activeId = id;
+					}),
 				{ rootMargin: '-20% 0px -60% 0px' }
 			);
 			observer.observe(el);
@@ -55,27 +58,34 @@
 		transform: translateY(-50%);
 		display: flex;
 		flex-direction: column;
-		gap: 10px;
+		gap: 5px;
+		padding: 7px;
+		border: 1px solid var(--border);
+		background: var(--glass);
 		z-index: 50;
 	}
 
 	.dot {
 		position: relative;
-		width: 7px;
-		height: 7px;
-		border-radius: 50%;
-		border: 1.5px solid var(--border-2);
+		width: 5px;
+		height: 18px;
+		border-radius: 0;
+		border: 0;
 		background: transparent;
 		padding: 0;
 		cursor: pointer;
 		opacity: 0.38;
-		transition: opacity 0.25s, transform 0.25s, background 0.25s, border-color 0.25s;
+		transition:
+			opacity 0.25s,
+			transform 0.25s,
+			background 0.25s,
+			border-color 0.25s;
 	}
 	.dot.active {
 		background: var(--accent);
 		border-color: var(--accent);
 		opacity: 1;
-		transform: scale(1.5);
+		transform: none;
 	}
 	.dot:hover {
 		opacity: 0.7;
@@ -96,11 +106,13 @@
 		font-size: 11px;
 		font-family: var(--font-sans);
 		padding: 3px 8px;
-		border-radius: 6px;
+		border-radius: 2px;
 		white-space: nowrap;
 		pointer-events: none;
 		opacity: 0;
-		transition: opacity 0.2s, transform 0.2s;
+		transition:
+			opacity 0.2s,
+			transform 0.2s;
 	}
 
 	@media (max-width: 640px) {

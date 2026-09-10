@@ -31,12 +31,28 @@
 		gap: 40px;
 	}
 
+	.skill-group {
+		border: 1px solid var(--border);
+		background: var(--surface);
+		padding: 24px;
+		box-shadow: var(--card-shadow);
+	}
+
+	.skill-group::before {
+		content: './skills/';
+		display: block;
+		font-size: 9px;
+		letter-spacing: 0.08em;
+		color: var(--accent);
+		margin-bottom: 8px;
+	}
+
 	.group-title {
 		font-size: 11px;
 		font-weight: 600;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		color: var(--text-3);
+		color: var(--text-2);
 		margin-bottom: 20px;
 	}
 
@@ -52,11 +68,17 @@
 		justify-content: space-between;
 		gap: 16px;
 	}
+	.skill-row::before {
+		content: '>';
+		color: var(--text-3);
+		font-size: 10px;
+	}
 
 	.skill-name {
 		font-size: 14px;
 		font-weight: 500;
 		color: var(--text);
+		flex: 1;
 	}
 
 	.dots {
@@ -67,7 +89,7 @@
 	.dot {
 		width: 7px;
 		height: 7px;
-		border-radius: 50%;
+		border-radius: 0;
 		background: var(--border-2);
 		transition: background 0.3s;
 	}

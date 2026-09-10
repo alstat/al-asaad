@@ -28,7 +28,7 @@ export const workExperiences: WorkExperience[] = [
 	{
 		company: 'University of the Philippines Diliman',
 		position: ['Senior Lecturer II (Part-Time)'],
-		dateRange: 'Jan 2026 - present',
+		dateRange: 'Jan 2026 - Jun 2026',
 		address: 'Quezon City, Philippines',
 		logoAlt: 'UPD Logo',
 		href: 'https://iis.upd.edu.ph/'

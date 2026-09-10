@@ -5,7 +5,7 @@
 
 <div class="section">
 	<div class="container">
-		<p class="label reveal">Software</p>
+		<p class="label reveal">ls ./software</p>
 
 		<!-- Applications section -->
 		<h2 class="section-title reveal reveal-d1">Applications</h2>
@@ -18,7 +18,7 @@
 				target="_blank"
 				rel="noopener"
 			>
-				<div class="app-badge">My App</div>
+				<div class="card-header"><span>drwxr-xr-x</span><span class="app-badge">My App</span></div>
 				<div class="card-logo app-logo">
 					<img src={ayahLabLogo} alt="AyahLab" loading="lazy" decoding="async" />
 				</div>
@@ -49,6 +49,9 @@
 					target="_blank"
 					rel="external noopener"
 				>
+					<div class="card-header">
+						<span>-rw-r--r--</span><span>{String(i + 1).padStart(2, '0')}</span>
+					</div>
 					<div class="card-logo">
 						<img src={project.logo} alt={project.label} loading="lazy" decoding="async" />
 					</div>
@@ -70,7 +73,9 @@
 <style>
 	.section {
 		padding: clamp(80px, 12vw, 140px) 0;
-		background: var(--surface);
+		background: color-mix(in srgb, var(--surface) 78%, transparent);
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.section-sub {
@@ -92,7 +97,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		padding: 28px;
+		padding: 54px 24px 24px;
 		border-radius: var(--r-lg);
 		background: var(--bg);
 		border: 1px solid var(--border);
@@ -104,17 +109,41 @@
 			box-shadow 0.25s var(--ease),
 			border-color 0.25s;
 	}
+	.card::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-left: 2px solid transparent;
+		pointer-events: none;
+		transition: border-color 0.2s;
+	}
 	.card:hover {
-		transform: translateY(-5px);
+		transform: translateY(-3px);
 		box-shadow: var(--card-shadow-hover);
 		border-color: var(--border-2);
 		text-decoration: none;
+	}
+	.card:hover::after {
+		border-color: var(--accent);
+	}
+	.card-header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: space-between;
+		padding: 9px 12px;
+		border-bottom: 1px solid var(--border);
+		font-size: 9px;
+		letter-spacing: 0.06em;
+		color: var(--text-3);
 	}
 
 	.card-logo {
 		width: 56px;
 		height: 56px;
-		border-radius: 14px;
+		border-radius: 2px;
 		background: var(--surface-2);
 		display: flex;
 		align-items: center;
@@ -161,23 +190,22 @@
 	}
 
 	.app-badge {
-		position: absolute;
-		top: 16px;
-		left: 28px;
 		font-size: 11px;
 		font-weight: 600;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
 		color: var(--accent);
 		background: color-mix(in srgb, var(--accent) 12%, transparent);
-		padding: 3px 8px;
-		border-radius: 20px;
+		padding: 2px 7px;
+		border-radius: 2px;
 	}
 
 	.app-logo {
 		width: 64px;
 		height: 64px;
-		margin-top: 28px;
+	}
+	.app-card .card-arrow {
+		top: 58px;
 	}
 
 	.section-divider {

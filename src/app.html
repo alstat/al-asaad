@@ -1,16 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#080b0a" media="(prefers-color-scheme: dark)" />
+		<meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)" />
 		<script>
-			(function() {
+			(function () {
 				var stored = localStorage.getItem('theme');
-				var theme = (stored === 'light' || stored === 'dark')
-					? stored
-					: (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+				var theme =
+					stored === 'light' || stored === 'dark'
+						? stored
+						: window.matchMedia('(prefers-color-scheme: light)').matches
+							? 'light'
+							: 'dark';
 				document.documentElement.setAttribute('data-theme', theme);
 			})();
 		</script>

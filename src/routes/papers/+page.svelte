@@ -15,21 +15,24 @@
 
 <svelte:head>
 	<title>Papers · Al-Ahmadgaid B. Asaad</title>
-	<meta name="description" content="Theses, conference papers, and journal articles by Al-Ahmadgaid B. Asaad." />
+	<meta
+		name="description"
+		content="Theses, conference papers, and journal articles by Al-Ahmadgaid B. Asaad."
+	/>
 </svelte:head>
 
 <div class="page">
 	<div class="container">
-
 		<div class="page-header">
-			<p class="label">Academic</p>
+			<p class="label">find ./research -type f</p>
 			<h1 class="page-title">Publications</h1>
 			<p class="page-sub">Theses, conference papers, and journal articles.</p>
+			<p class="result-count">{papers.length} records found</p>
 		</div>
 
 		<!-- Theses -->
 		<section class="pub-section">
-			<h2 class="section-label">Theses</h2>
+			<h2 class="section-label"><span>DIR</span> Theses</h2>
 			<div class="pub-list">
 				{#each theses as thesis, i (thesis.title)}
 					<div class="pub-item reveal reveal-d{Math.min(i + 1, 5)}">
@@ -55,7 +58,7 @@
 		<!-- By year -->
 		{#each years as year (year)}
 			<section class="pub-section">
-				<h2 class="section-label">{year}</h2>
+				<h2 class="section-label"><span>LOG</span> {year}</h2>
 				<div class="pub-list">
 					{#each byYear[year] as paper, i (paper.title)}
 						<div class="pub-item reveal reveal-d{Math.min(i + 1, 5)}">
@@ -63,8 +66,8 @@
 								<span
 									class="pub-badge"
 									class:journal={paper.type === 'journal'}
-									class:conference={paper.type === 'conference'}
-								>{paper.type}</span>
+									class:conference={paper.type === 'conference'}>{paper.type}</span
+								>
 								<span class="pub-emoji">{paper.application}</span>
 							</div>
 							<div class="pub-body">
@@ -80,8 +83,11 @@
 												{:else}
 													{a}
 												{/if}
-												{#if k < paper.author.length - 2}, {/if}
-												{#if k === paper.author.length - 2} &amp; {/if}
+												{#if k < paper.author.length - 2},
+												{/if}
+												{#if k === paper.author.length - 2}
+													&amp;
+												{/if}
 											{/each}
 										{:else}
 											<strong>{paper.author}</strong>
@@ -106,13 +112,22 @@
 				</div>
 			</section>
 		{/each}
-
 	</div>
 </div>
 
 <style>
 	.page {
 		padding: clamp(60px, 8vw, 100px) 0 100px;
+	}
+	.page::before {
+		content: 'INDEX / PUBLICATIONS';
+		position: fixed;
+		right: -38px;
+		top: 48%;
+		transform: rotate(90deg);
+		font-size: 9px;
+		letter-spacing: 0.18em;
+		color: var(--text-3);
 	}
 
 	.page-header {
@@ -122,11 +137,20 @@
 	.page-title {
 		font-size: clamp(36px, 5.5vw, 64px);
 		font-weight: 700;
-		letter-spacing: -0.04em;
+		letter-spacing: -0.06em;
 		line-height: 1.08;
 		color: var(--text);
 		margin-top: 10px;
 		margin-bottom: 14px;
+	}
+	.page-title::before {
+		content: '> ';
+		color: var(--accent);
+	}
+	.page-title::after {
+		content: '_';
+		color: var(--accent);
+		animation: blink 1.1s steps(1) infinite;
 	}
 
 	.page-sub {
@@ -134,6 +158,16 @@
 		color: var(--text-2);
 		max-width: 480px;
 		line-height: 1.65;
+	}
+	.result-count {
+		margin-top: 20px;
+		font-size: 10px;
+		color: var(--accent);
+		letter-spacing: 0.08em;
+	}
+	.result-count::before {
+		content: '[OK] ';
+		color: var(--text-3);
 	}
 
 	.pub-section {
@@ -145,10 +179,14 @@
 		font-weight: 600;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		color: var(--text-3);
+		color: var(--text-2);
 		border-bottom: 1px solid var(--border);
 		padding-bottom: 12px;
 		margin-bottom: 20px;
+	}
+	.section-label span {
+		color: var(--accent);
+		margin-right: 10px;
 	}
 
 	.pub-list {
@@ -159,8 +197,15 @@
 	.pub-item {
 		display: flex;
 		gap: 20px;
-		padding: 20px 0;
+		padding: 22px 14px;
 		border-bottom: 1px solid var(--border);
+		transition:
+			background 0.2s,
+			box-shadow 0.2s;
+	}
+	.pub-item:hover {
+		background: var(--accent-dim);
+		box-shadow: inset 2px 0 var(--accent);
 	}
 	.pub-item:last-child {
 		border-bottom: none;
@@ -189,7 +234,7 @@
 		letter-spacing: 0.07em;
 		text-transform: uppercase;
 		padding: 3px 8px;
-		border-radius: 20px;
+		border-radius: 2px;
 		background: var(--surface-2);
 		color: var(--text-2);
 	}
@@ -229,6 +274,11 @@
 		color: var(--accent);
 		text-decoration: none;
 	}
+	.pub-title a::after {
+		content: ' ↗';
+		color: var(--text-3);
+		font-size: 10px;
+	}
 
 	.pub-details {
 		font-size: 13px;
@@ -244,6 +294,9 @@
 	}
 
 	@media (max-width: 560px) {
+		.page::before {
+			display: none;
+		}
 		.pub-item {
 			flex-direction: column;
 			gap: 10px;
