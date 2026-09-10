@@ -25,7 +25,10 @@
 			<h2 class="section-label"><span>01</span> Work</h2>
 			<div class="timeline">
 				{#each workExperiences as work, i}
-					<div class="timeline-item reveal reveal-d{Math.min(i + 1, 5)}">
+					<div
+						class="timeline-item reveal reveal-d{Math.min(i + 1, 5)}"
+						class:current={typeof work.dateRange === 'string' && work.dateRange.endsWith('present')}
+					>
 						<div class="tl-logo">
 							<a href={work.href} target="_blank" rel="noopener" aria-label={work.company}>
 								<enhanced:img src={workLogos[i]} alt={work.logoAlt} sizes="48px" />
@@ -162,6 +165,14 @@
 	.timeline-item:hover {
 		background: var(--accent-dim);
 		box-shadow: inset 2px 0 var(--accent);
+	}
+	.timeline-item.current {
+		background: var(--accent-dim);
+		box-shadow: inset 2px 0 var(--accent);
+	}
+	.timeline-item.current .role-title,
+	.timeline-item.current .role-date {
+		color: var(--accent);
 	}
 	.timeline-item:last-child {
 		border-bottom: none;
