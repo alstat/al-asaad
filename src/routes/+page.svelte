@@ -47,7 +47,7 @@
 			</div>
 			<div class="photo-frame">
 				<enhanced:img
-					src="$lib/images/alasaad.jpg"
+					src="../../static/alasaad-new.jpg"
 					alt="Al-Ahmadgaid Asaad"
 					sizes="(min-width: 900px) 380px, 80vw"
 				/>
